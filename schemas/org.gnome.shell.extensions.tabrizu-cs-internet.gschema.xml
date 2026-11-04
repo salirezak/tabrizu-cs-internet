@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.tabrizu-cs-internet" path="/org/gnome/shell/extensions/tabrizu-cs-internet/">
+    <key name="wifi-ssids" type="as">
+      <default>['OLOM-1', 'OLOM-2']</default>
+      <summary>Wi-Fi network SSIDs</summary>
+      <description>Wi-Fi network names on which the extension should manage the internet session.</description>
+    </key>
+    <key name="profiles" type="a(sss)">
+      <default>[]</default>
+      <summary>Login profiles</summary>
+      <description>Profiles containing a name, username, and password for the internet portal.</description>
+    </key>
+    <key name="active-profile-name" type="s">
+      <default>''</default>
+      <summary>Active login profile</summary>
+      <description>Name of the currently active login profile.</description>
+    </key>
+    <key name="keepalive-interval" type="u">
+      <default>3</default>
+      <range min="0" max="30"/>
+      <summary>Session keepalive interval</summary>
+      <description>Interval in minutes between requests that keep the internet session alive.</description>
+    </key>
+    <key name="request-timeout" type="u">
+      <default>10</default>
+      <range min="1" max="120"/>
+      <summary>Request timeout</summary>
+      <description>Maximum time to wait for a response, in seconds.</description>
+    </key>
+  </schema>
+</schemalist>
