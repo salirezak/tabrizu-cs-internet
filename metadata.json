@@ -1,0 +1,8 @@
+{
+  "uuid": "tabrizu-cs-internet@salirezak.github.io",
+  "settings-schema": "org.gnome.shell.extensions.tabrizu-cs-internet",
+  "name": "Tabriz University CS Internet Portal",
+  "description": "Manage session with the University of Tabriz Computer Science Department internet portal.",
+  "version": "1.0.0",
+  "shell-version": ["50"]
+}
