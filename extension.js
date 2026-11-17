@@ -3,13 +3,16 @@ import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 import { TabrizuCsInternetIndicator } from './lib/indicator.js';
 import { SettingsManager } from './lib/settings.js';
+import { NetworkMonitor } from './lib/network.js';
 
 
 
 export default class TabrizuCsInternetExtension extends Extension {
     enable() {
         this._settingsManager = new SettingsManager(this);
-        this._indicator = new TabrizuCsInternetIndicator(this, this._settingsManager);
+        this._networkMonitor = new NetworkMonitor(this._settingsManager);
+        this._indicator = new TabrizuCsInternetIndicator(this, this._settingsManager, this._networkMonitor);
+
         Main.panel.addToStatusArea(this.uuid, this._indicator);
     }
 
@@ -21,6 +24,10 @@ export default class TabrizuCsInternetExtension extends Extension {
         if (this._settingsManager) {
             this._settingsManager.destroy();
             this._settingsManager = null;
+        }
+        if (this._networkMonitor) {
+            this._networkMonitor.destroy();
+            this._networkMonitor = null;
         }
     }
 }
